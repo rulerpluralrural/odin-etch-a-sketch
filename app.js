@@ -1,33 +1,52 @@
 // sketch pad container variable
 const container = document.getElementById('container');
 
-// color picker variable
-const colorPicker = document.getElementById('color-picker');
-
 // sketch pad size slider variable
 const slider = document.getElementById('slider');
+const spanTxt = document.querySelector('#size');
 
 // Buttons variables
-const blackBtn = document.getElementById('btn-black');
-const grayBtn = document.getElementById('btn-gray');
-const rainbowBtn = document.getElementById('btn-rainbow');
-const eraseBtn = document.getElementById('btn-erase');
-const resetBtn = document.getElementById('btn-reset');
+const blackBtn = document.querySelector('#btn-black');
+const grayBtn = document.querySelector('#btn-gray');
+const rainbowBtn = document.querySelector('#btn-rainbow');
+const eraseBtn = document.querySelector('#btn-erase');
+const resetBtn = document.querySelector('#btn-reset');
 
 
-const div = [];
+function sketchPad(size) {
 
-// create 16x16 div and append to the container
-for (let i = 0; i < 256; i++) {
-    const divs = document.createElement('div');
-    container.appendChild(divs);
-    container.style.gridTemplateColumns = 'repeat(16,1fr)';
-    div.push(divs);
+    container.innerHTML = '';
+    
+    for (let i = 0; i < size * size; i++) {
+        const divs = document.createElement('div');
+        container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+        container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+        container.insertAdjacentElement('beforeend', divs);
+        divs.addEventListener('mouseover', function() {
+            this.classList.add('black');
+        });
+    }
 }
 
-// paint black on on each div with mouseover
-div.forEach((sqr) => {
-    sqr.addEventListener('mouseover', function() {
-        this.classList.add('black');
-    });
+// slider function change the sketchpad size and show the size text when changed
+function changeSize(val) {
+    sketchPad(val);
+    spanTxt.textContent = `${val} x ${val}`;
+}
+
+changeSize(16);
+
+
+// color picker
+let setColor = document.querySelector('[type="color"]');
+setColor.addEventListener('input', (e) => {
+    color = e.target.value
 });
+
+/* TODO */
+// Buttons brush should be what ever the clicked button is
+// Button rainbow should be different colors
+// Whatever color picked on input color should be the brush color
+// Clear button should reset the sketchpad to white background
+// fix event listener from mouseover to toggle
+

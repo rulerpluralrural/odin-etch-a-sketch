@@ -20,8 +20,8 @@
                 <button id="btn-rainbow" class="btn-order">Rainbow</button>
             </div>
             <div class="input-box">
-                <input type="range" name="slider" id="slider" value="16" min="1" max="64">
-                <label for="slider">Sketch Pad Size <span id="size">|1 x 1|</span></label>
+                <input type="range" name="slider" id="slider" value="16" onchange="changeSize(this.value)" min="1" max="60">
+                <label for="slider">Sketch Pad Size: <span id="size"></span></label>
             </div>
                 <button id="btn-erase" class="btn-order">Eraser</button>
                 <button id="btn-reset" class="btn-order"> Clear</button>
