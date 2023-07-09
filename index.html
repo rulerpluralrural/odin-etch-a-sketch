@@ -7,8 +7,27 @@
     <title>Etch A Sketch</title>
 </head>
 <body>
-    <div id="container"></div>
-
+    <header>
+        <h1>Etch A Sketch</h1>
+    </header>
+    <main>
+        <div class="btn-container">
+                <input type="color" name="color-picker" id="color-picker" value="#ffffff">
+                <label for="color-picker">Try Different Colors!</label>
+            <div class="color-btns">
+                <button id="btn-black" class="btn-order">Black</button>
+                <button id="btn-gray" class="btn-order">Gray</button>
+                <button id="btn-rainbow" class="btn-order">Rainbow</button>
+            </div>
+            <div class="input-box">
+                <input type="range" name="slider" id="slider" value="16" min="1" max="64">
+                <label for="slider">Sketch Pad Size <span id="size">|1 x 1|</span></label>
+            </div>
+                <button id="btn-erase" class="btn-order">Eraser</button>
+                <button id="btn-reset" class="btn-order"> Clear</button>
+        </div>
+        <div id="container"> </div>
+    </main>
     <script src="app.js"></script>
 </body>
 </html>
