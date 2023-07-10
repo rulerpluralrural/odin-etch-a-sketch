@@ -42,7 +42,7 @@ header h1 {
     letter-spacing: .1rem;
     font-weight: 500;
     font-size: 2.8rem;
-    color: #0066CC;
+    color: hsla(380, 100%, 75%, 1);
     font-family: 'Gabriela', serif;
 }
 
@@ -136,7 +136,7 @@ main {
         rgba(251, 7, 217, 1) 90%,
         rgba(255, 0, 0, 1) 100%
     );
-    color: #edfafc;
+        color: #f4f4fd;
 }
 
 #btn-rainbow:hover {
@@ -154,7 +154,7 @@ main {
         rgba(251, 7, 217, 1) 90%,
         rgba(255, 0, 0, 1) 100%
     );
-    color: #feffff;
+    color: #110831;
 }
 
 #btn-reset {
@@ -179,21 +179,4 @@ main {
     box-shadow: 5px 5px 10px rgb(87, 86, 86);
 }
 
-#container div {
-    cursor: crosshair;
-}
 
-.black  {
-    background-color: black;
-    cursor: crosshair;
-}
-
-.white {
-    background-color: white;
-    cursor: crosshair;
-}
-
-.gray {
-    background-color: gray;
-    cursor: crosshair;
-}
